@@ -53,26 +53,18 @@ Luckily Github's Search API returns items ranked by popularity.
 
 ```
 ./fetch-me -f bat
- - sharkdp/bat  A cat(1) clone with wings.
- - astaxie/bat  Go implement CLI, cURL-like tool for humans
- - AveYo/MediaCreationTool.bat  Universal MCT wrapper script for all Windows 10/11 versions from 1507 to 21H2!
- - spring-projects/spring-batch Spring Batch is a framework for writing offline and batch applications using Spring and Java
+ - sharkdp/bat          A cat(1) clone with wings.
+ - astaxie/bat          Go implement CLI, cURL-like tool for humans
  - sstephenson/bats     Bash Automated Testing System
- - Roomify/bat  A Booking and Availability Management Library for PHP
- - google/battery-historian     Battery Historian is a tool to analyze battery consumers using Android "bugreport" files.
- - abbodi1406/BatUtil   Collection of batch scripts utilities for Windows
- - bat/bat        Bayesian analysis toolkit  http://mpp.mpg.de/bat
+ - Roomify/bat          A Booking and Availability Management Library for PHP
+ - bat/bat              Bayesian analysis toolkit  http://mpp.mpg.de/bat
  - eth-p/bat-extras     Bash scripts that integrate bat with various command line tools.
  - angular/batarang     AngularJS WebInspector Extension for Chrome
  - beeware/batavia      A JavaScript implementation of the Python virtual machine.
  - batsh-dev-team/Batsh A language that compiles to Bash and Windows Batch
- - npocmaka/batch.scripts       batch script utils and examples by npocmaka -
- - vacancy/Synchronized-BatchNorm-PyTorch       Synchronized Batch Normalization implementation in PyTorch.
  - bats-core/bats-core  Bash Automated Testing System
- - antiguab/BATabBarController  A TabBarController with a unique animation for selection
  - tshakalekholoane/bat Battery management utility for Linux laptops.
  - shinima/battle-city  🎮 Battle city remake built with react.
- - batfish/batfish      Batfish is a network configuration analysis tool that can find bugs and guarantee the correctness of (planned or current) network configurations. It enables network engineers to rapidly and safely evolve their network, without fear of outages or security breaches.
 ```
 And I, sometimes don't even remember the name of the tool I scrolled by 2 years ago.
 

@@ -62,10 +62,10 @@ assert-cmd jq
 debug() {
   if [[ ! -t 0 ]]; then
     while read -r in; do
-      debug "$in"
+      warn "DEBUG: $in"
     done
   elif [[ -n ${DEBUG-} ]]; then
-    echo >&2 "DEBUG: $@"
+    warn "DEBUG: $@"
   fi
 }
 
@@ -108,7 +108,6 @@ get-release() {
 
 get-latest() {
   local repo="${1%/}"
-  set -xv
   get-gh-artifact "$repo" latest | jq -Ser '.tag_name'
 }
 
@@ -134,7 +133,7 @@ install-candidate() {
       assert-cmd tar
       tar xf "$file" -C "$cache"
       cd "$cache"
-      find . -maxdepth 1 -type f -executable -exec sh -c '
+      find . -maxdepth 3 -type f -executable -exec sh -c '
         for i; do install -v -m=555 $i '"$XDG_BIN_DIR"'; done
       ' _ {} + 2>&1 | debug
     ;;
@@ -149,8 +148,8 @@ install-candidate() {
     ;;
   esac
 
-  echo -n "$command successfully installed to "
-  hash -r && type -P "$command"
+  echo -n "$repo successfully installed"
+  hash -r && type -P "$command" || true
 }
 
 find-repo() {
@@ -158,9 +157,10 @@ find-repo() {
   if [[ -z ${json} ]]; then
     die "No response in looking for repositories matching: $*"
   fi
+  echo "https://github.com/search?type=repositories&q=$*"
   jq -cer '.items[] | [.full_name, .description] | @tsv' <<<"$json" |
     while read -r item; do
-      printf ' - %s\n' "$item"
+      printf ' - %s\n' "${item:0:100}"
     done
   exit $?
 }
